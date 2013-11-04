@@ -1,0 +1,34 @@
+{
+  "name": "validity-entity-exists",
+  "version": "0.1.0",
+  "description": "Validity style validator to ensure a separate entity exists when being added to the current entity",
+  "main": "validator.js",
+  "directories": {
+    "test": "test"
+  },
+  "publishConfig": {
+    "registry": "http://registry.npmjs.org"
+  },
+  "scripts": {
+    "test": "./node_modules/.bin/istanbul test ./node_modules/.bin/_mocha -- -R spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:domudall/validity-entity-exists"
+  },
+  "keywords": [
+    "validity",
+    "validation",
+    "exists",
+    "save"
+  ],
+  "author": "",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/domudall/validity-entity-exists/issues"
+  },
+  "devDependencies": {
+    "mocha": "~1.13.0",
+    "istanbul": "~0.1.44"
+  }
+}
