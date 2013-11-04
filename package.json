@@ -22,7 +22,7 @@
     "exists",
     "save"
   ],
-  "author": "",
+  "author": "Dom Udall <dom@synthmedia.co.uk>",
   "license": "BSD-2-Clause",
   "bugs": {
     "url": "https://github.com/domudall/validity-entity-exists/issues"
