@@ -31,7 +31,6 @@ function createValidator(findOne) {
 
     })
 
-
   }
 
   return validate
