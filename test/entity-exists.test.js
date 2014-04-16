@@ -27,4 +27,17 @@ describe('Entity exists validator', function () {
     })
   })
 
+  it('should allow you to provide a different name for the property in the other collection', function (done) {
+    var validate = createValidator(function (query, cb) {
+      assert.deepEqual(query, { otherproperty: 'jim' })
+      return cb(null)
+    }, 'otherproperty')
+
+    validate('username', 'user name', { username: 'jim' }, function (err, errMessage) {
+      if (err) return done(err)
+      assert.equal('"jim" does not exist', errMessage)
+      done()
+    })
+  })
+
 })
