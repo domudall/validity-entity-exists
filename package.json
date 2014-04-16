@@ -1,6 +1,6 @@
 {
   "name": "validity-entity-exists",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Validity style validator to ensure a separate entity exists when being added to the current entity",
   "main": "validator.js",
   "directories": {
