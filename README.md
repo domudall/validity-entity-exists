@@ -26,19 +26,22 @@ var validity = require('validity')
 var schema = schemata(
     { author:
       { type: String
-      , validators: { all: [ entityExistsValidator(userCollection) ] }
+      , validators: { all: [ entityExistsValidator(userCollection.findOne) ] }
       }
     })
 ```
 
 ## API
 
-### var validate = entityExistsValidator(Function: findOne)
+### var validate = entityExistsValidator(Function: findOne [, String: propertyName])
 
 Create a validate function. `findOne(obj, cb)` should be a query function that
 allows the validator access to whatever persistence mechanism you are using, in
 order to check for the existence of the given property. `obj` is a query object
 and `cb` is a callback function `cb(err, foundObject)`.
+
+Optional 2nd parameter which allows you to provide the name of the property in the
+subsequent collection.
 
 ### validate(String:key, String:keyDisplayName, Object:object, Function:cb)
 

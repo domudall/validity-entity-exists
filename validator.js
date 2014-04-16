@@ -1,19 +1,12 @@
 module.exports = createValidator
 
-function createValidator(findOne) {
+function createValidator(findOne, property) {
 
-  function validate(keys, keyDisplayName, object, callback) {
+  function validate(key, keyDisplayName, object, callback) {
 
     var queryObject = {}
-      , values = []
 
-    // Force fields to be an array if only a single value
-  ; [].concat(keys).forEach(function (field) {
-      queryObject[field] = object[field]
-      values.push(object[field])
-    })
-
-    values = values.join(',')
+    queryObject[property || key] = object[key]
 
     findOne(queryObject, function (err, foundObject) {
 
@@ -25,7 +18,7 @@ function createValidator(findOne) {
       } else {
 
         // No object was found, so the property is invalid
-        return callback(null, '"' + values + '" does not exist')
+        return callback(null, '"' + object[key] + '" does not exist')
 
       }
 
